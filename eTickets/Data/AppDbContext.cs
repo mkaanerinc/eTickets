@@ -20,7 +20,7 @@ namespace eTickets.Data
 
             modelBuilder.Entity<Actor_Movie>()
                 .HasOne(x => x.Movie)
-                .WithMany(x => x.Actors_Movies)
+                .WithMany((System.Linq.Expressions.Expression<System.Func<Movie, System.Collections.Generic.IEnumerable<Actor_Movie>>>)(x => (System.Collections.Generic.IEnumerable<Actor_Movie>)x.Actors_Movies))
                 .HasForeignKey(x => x.MovieId);
 
             modelBuilder.Entity<Actor_Movie>()

@@ -18,7 +18,7 @@
                             <p class="card-text">
                                 <h5 class="card-title">
                                     @item.Name
-                                    <a class="text-white float-right"><i class="bi bi-pencil-square"></i></a>
+                                    <a class="text-white float-right" asp-controller="Movies" asp-action="Edit" asp-route-id="@item.Id"><i class="bi bi-pencil-square"></i></a>
                                 </h5>
                             </p>
                         </div>
@@ -54,7 +54,7 @@
                     <div class="col-md-12">
                         <div class="card-footer ">
                             <p class="card-text">
-                                <a class="btn btn-outline-primary float-right">
+                                <a class="btn btn-outline-primary float-right" asp-controller="Movies" asp-action="Details" asp-route-id="@item.Id">
                                     <i class="bi bi-eye-fill"></i> Show Details
                                 </a>
                                 <a class="btn btn-success text-white">
@@ -68,4 +68,6 @@
         </div>
     }
 </div>
+
+@await Html.PartialAsync("_CreateItem","Movies")
 
