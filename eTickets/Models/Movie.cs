@@ -29,5 +29,6 @@ namespace eTickets.Models
 
         [ForeignKey("ProducerId")]
         public Producer Producer { get; set; }
+        public List<OrderItem> OrderItems { get; set; }
     }
 }
