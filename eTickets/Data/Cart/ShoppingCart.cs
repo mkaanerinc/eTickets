@@ -8,8 +8,8 @@ namespace eTickets.Data.Cart
     public class ShoppingCart
     {
         private readonly AppDbContext _context;
-        private string ShoppingCartId { get; set; }
-        private List<ShoppingCartItem> ShoppingCartItems { get; set; }
+        public string ShoppingCartId { get; set; }
+        public List<ShoppingCartItem> ShoppingCartItems { get; set; }
 
         public ShoppingCart(AppDbContext context)
         {
