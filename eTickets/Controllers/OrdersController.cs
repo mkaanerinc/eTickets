@@ -1,5 +1,6 @@
 ﻿using eTickets.Data.Cart;
 using eTickets.Data.Services.Abstract;
+using eTickets.Data.Services.Concrete;
 using eTickets.Data.ViewModels;
 using Microsoft.AspNetCore.Mvc;
 using System.Threading.Tasks;
@@ -17,6 +18,14 @@ namespace eTickets.Controllers
             _movieService = movieService;
             _shoppingCart = shoppingCart;
             _orderService = orderService;
+        }
+
+        public async Task<IActionResult> Index()
+        {
+            string userId = "";
+
+            var orders = await _orderService.GetOrdersByUserIdAsync(userId);
+            return View(orders);
         }
 
         public IActionResult ShoppingCart()
