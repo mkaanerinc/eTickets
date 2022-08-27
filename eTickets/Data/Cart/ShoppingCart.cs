@@ -88,6 +88,8 @@ namespace eTickets.Data.Cart
             _context.Set<ShoppingCartItem>().RemoveRange(items);
 
             await _context.SaveChangesAsync();
+
+            ShoppingCartItems = new List<ShoppingCartItem>();
         }
     }
 }
