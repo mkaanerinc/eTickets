@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
+using System;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -38,8 +39,8 @@ namespace eTickets.Controllers
             if(!string.IsNullOrEmpty(searchString))
             {
                 var filteredResult = listOfMovies
-                    .Where(x => x.Name.Contains(searchString) || x.Description.Contains(searchString))
-                    .ToList();
+                    .Where(x => string.Equals(x.Name, searchString, StringComparison.CurrentCultureIgnoreCase) ||
+                    string.Equals(x.Description, searchString, StringComparison.CurrentCultureIgnoreCase)).ToList();
 
                 return View("Index",filteredResult);
             }
