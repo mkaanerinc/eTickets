@@ -1,13 +1,16 @@
 ﻿using eTickets.Data.Cart;
 using eTickets.Data.Services.Abstract;
 using eTickets.Data.Services.Concrete;
+using eTickets.Data.Static;
 using eTickets.Data.ViewModels;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System.Security.Claims;
 using System.Threading.Tasks;
 
 namespace eTickets.Controllers
 {
+    [Authorize]
     public class OrdersController : Controller
     {
         private readonly IMovieService _movieService;
