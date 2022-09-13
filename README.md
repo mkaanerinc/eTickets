@@ -143,6 +143,20 @@
 
 </details><p></p>
 
+## Required Packages for Back-End
+
+<details>
+<summary>Click to see required packages</summary>
+
+| Package Name  | Version |
+| ------------- | ------------- |
+| Microsoft.AspNetCore.Identity.EntityFrameworkCore  | 5.0.17  |
+| Microsoft.EntityFrameworkCore  | 5.0.17  |
+| Microsoft.EntityFrameworkCore.Tools  | 5.0.17  |
+| Microsoft.EntityFrameworkCore.SqlServer  | 5.0.17  |
+
+</details><p></p>
+
 # License
 
 Distributed under the MIT License. See `LICENSE` for more information.
